@@ -1,0 +1,224 @@
+{
+  "title": "Lab Assignment: Setting Up PSK Wireless SSID",
+  "objective": {
+    "description": "Configure a secure PSK (Pre-Shared Key) SSID on the Nile Control Center, connect a test client to the SSID, and verify successful connection and network access.",
+    "portal_url": "#"
+  },
+  "task_instructions": {
+    "steps": [
+      {
+        "step_number": 1,
+        "title": "DHCP Configuration",
+        "instructions": [
+          {
+            "type": "text",
+            "content": "Navigate to Network Setup → DHCP.",
+            "bold_text": ["Network Setup → DHCP"],
+            "code_text": []
+          },
+          {
+            "type": "text",
+            "content": "Select Nile DHCP as the server type.",
+            "bold_text": [],
+            "code_text": ["Nile DHCP"]
+          },
+          {
+            "type": "sub_steps",
+            "content": "Create a new DHCP scope for this PSK SSID:",
+            "sub_steps": [
+              "Pool Name - PSK-Scope",
+              "Network - 192.168.10.0/24",
+              "DNS Server - 4.2.2.1",
+              "Click Save"
+            ]
+          }
+        ],
+        "example_box": {
+          "enabled": false,
+          "content": ""
+        },
+        "note_box": {
+          "enabled": false,
+          "content": ""
+        },
+        "warning_box": {
+          "enabled": false,
+          "content": ""
+        }
+      },
+      {
+        "step_number": 2,
+        "title": "Segment Creation",
+        "instructions": [
+          {
+            "type": "text",
+            "content": "Go to Network Setup → Segments.",
+            "bold_text": ["Network Setup → Segments"],
+            "code_text": []
+          },
+          {
+            "type": "sub_steps",
+            "content": "Create a new segment named PSK-Seg:",
+            "sub_steps": [
+              "Select the Service Area.",
+              "Choose HoL and Click OK",
+              "No Authentication source needs to be configured",
+              "Select the DHCP scope (Nile DHCP) for the clients.",
+              "Select the Subnet PSK-Scope that was created in the previous Step",
+              "Click Save"
+            ]
+          }
+        ],
+        "example_box": {
+          "enabled": false,
+          "content": ""
+        },
+        "note_box": {
+          "enabled": false,
+          "content": ""
+        },
+        "warning_box": {
+          "enabled": false,
+          "content": ""
+        }
+      },
+      {
+        "step_number": 3,
+        "title": "Wireless SSID Configuration",
+        "instructions": [
+          {
+            "type": "text",
+            "content": "Navigate to Network Setup → Wireless.",
+            "bold_text": ["Network Setup → Wireless"],
+            "code_text": []
+          },
+          {
+            "type": "text",
+            "content": "Click on the ➕ icon to add a new SSID.",
+            "bold_text": [],
+            "code_text": []
+          },
+          {
+            "type": "sub_steps",
+            "content": "Configure the following:",
+            "sub_steps": [
+              "SSID Name: Define anything you like, ensure it is unique to you. e.g, Alonso-PSK (Alonso is my tenant name)",
+              "Type: Personal",
+              "Security: WPA2",
+              "Pre-shared key: 12345678",
+              "Segment : PSK-Seg (or any other name you may have used)"
+            ]
+          }
+        ],
+        "example_box": {
+          "enabled": true,
+          "content": "SSID Name: Alonso-PSK (where Alonso is the tenant name - use your own unique name)."
+        },
+        "note_box": {
+          "enabled": false,
+          "content": ""
+        },
+        "warning_box": {
+          "enabled": false,
+          "content": ""
+        }
+      },
+      {
+        "step_number": 4,
+        "title": "Connectivity Testing",
+        "instructions": [
+          {
+            "type": "text",
+            "content": "If you are conducting this lab remotely, you should have received a URL (and a username/password) to connect to a windows device",
+            "bold_text": [],
+            "code_text": []
+          },
+          {
+            "type": "text",
+            "content": "Use a wireless device to connect to the new SSID.",
+            "bold_text": [],
+            "code_text": []
+          },
+          {
+            "type": "text",
+            "content": "Verify you can access the Internet",
+            "bold_text": [],
+            "code_text": []
+          }
+        ],
+        "example_box": {
+          "enabled": false,
+          "content": ""
+        },
+        "note_box": {
+          "enabled": false,
+          "content": ""
+        },
+        "warning_box": {
+          "enabled": false,
+          "content": ""
+        }
+      },
+      {
+        "step_number": 5,
+        "title": "Monitoring and Troubleshooting",
+        "instructions": [
+          {
+            "type": "text",
+            "content": "Nile provides a single button to troubleshoot clients. When executed it runs a variety of tests and displays the results. It also gives the option to run some on-demand tests like Speed Test thus giving a 360 view of the client.",
+            "bold_text": [],
+            "code_text": []
+          },
+          {
+            "type": "text",
+            "content": "Navigate to Devices → Click on your Wireless Client",
+            "bold_text": ["Devices → Click on your Wireless Client"],
+            "code_text": []
+          },
+          {
+            "type": "text",
+            "content": "Click on RUN TEST (top right hand corner of the screen)",
+            "bold_text": ["RUN TEST"],
+            "code_text": []
+          },
+          {
+            "type": "text",
+            "content": "Take Note of the Ping and ARP ping status",
+            "bold_text": ["Ping and ARP ping"],
+            "code_text": []
+          },
+          {
+            "type": "text",
+            "content": "Disconnect the client and enter an incorrect pre-shared key",
+            "bold_text": [],
+            "code_text": []
+          },
+          {
+            "type": "text",
+            "content": "Navigate to the Dashboard and note down what you see",
+            "bold_text": ["Dashboard"],
+            "code_text": []
+          }
+        ],
+        "example_box": {
+          "enabled": false,
+          "content": ""
+        },
+        "note_box": {
+          "enabled": false,
+          "content": ""
+        },
+        "warning_box": {
+          "enabled": false,
+          "content": ""
+        }
+      }
+    ]
+  },
+  "verification_criteria": [
+    "SSID is broadcasting and visible to client devices.",
+    "Devices are receiving an IP address from the respective DHCP scope for this segment."
+  ]
+}
+
+

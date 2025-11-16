@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboard a Wired Device Using the Fingerprint Rule</title>
+</head>
+
+<body
+    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px; margin: 0;">
+
+    <div
+        style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        
+        <!-- 
+        ============================================
+        HEADER - Edit the emoji and title
+        ============================================
+        -->
+        <div
+            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center;">
+            <div style="font-size: 3em; margin-bottom: 10px;">🧪</div>
+            <h1 style="font-size: 2em; margin: 0;">Lab Assignment: Onboard a Wired Device Using the Fingerprint Rule</h1>
+        </div>
+
+        <!-- 
+        ============================================
+        OBJECTIVE - Edit the objective text
+        ============================================
+        -->
+        <div
+            style="background: #f8f9fa; border-left: 5px solid #667eea; padding: 20px; margin: 30px; border-radius: 8px;">
+            <h2 style="color: #667eea; margin: 0 0 10px 0; font-size: 1.5em;">📌 Objective</h2>
+            <p style="margin: 0 0 20px 0;">Automatically onboard a wired device based on its fingerprint (OS/device type) by applying fingerprint-based rules, without requiring 802.1X or manual registration.</p>
+        </div>
+
+        <!-- 
+        ============================================
+        CONTENT - Task Instructions
+        ============================================
+        -->
+        <div style="padding: 30px;">
+            <h2 style="color: #667eea; margin-bottom: 20px; font-size: 1.5em;">🔧 Task Instructions</h2>
+
+            <!-- 
+            ============================================
+            STEP 1 - Segment Reuse & Update
+            ============================================
+            -->
+            <div class="step" data-step="1" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step1" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 1:</span> Segment Reuse & Update</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">Navigate to <strong
+                                style="color: #1e293b;">Network Setup → Segments</strong>.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Locate the previously created 802.1X segment.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Rename it to something more generic (e.g., <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Wired-Fingerprint-Segment</span>).</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Remove the authentication method (set it to blank).</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Confirm that it still has a <strong style="color: #1e293b;">Nile DHCP scope</strong> attached.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 
+            ============================================
+            STEP 2 - Fingerprint Rule Setup
+            ============================================
+            -->
+            <div class="step" data-step="2" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step2" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 2:</span> Fingerprint Rule Setup</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">Go to <strong
+                                style="color: #1e293b;">Access Management → Add Device Rule</strong>.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Create a rule based on device fingerprint:
+                            <div style="margin-left: 20px; margin-top: 10px;">
+                                <div style="padding: 8px 0;">• For example, select <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Windows OS</span> or <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">macOS</span> as the match criteria.</div>
+                                <div style="padding: 8px 0;">• Assign the device to the updated wired segment.</div>
+                                <div style="padding: 8px 0;">• Set the rule to <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Auto-Approve</span>.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 
+            ============================================
+            STEP 3 - Device Connection
+            ============================================
+            -->
+            <div class="step" data-step="3" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step3" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 3:</span> Device Connection</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">Connect your wired laptop or desktop to the switch.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">The system should detect and classify the device using fingerprinting.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">The device should automatically appear in the correct segment without any user action.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 
+        ============================================
+        VERIFICATION CRITERIA - Edit the criteria
+        ============================================
+        -->
+        <div
+            style="background: #d1fae5; border-left: 5px solid #10b981; padding: 20px; margin: 30px; border-radius: 8px;">
+            <h2 style="color: #10b981; margin: 0 0 15px 0; font-size: 1.5em;">✅ Verification Criteria</h2>
+            <p style="margin-bottom: 15px; color: #065f46;">Ensure the following conditions are met before considering
+                the lab complete:</p>
+            <ul style="margin: 0 0 0 20px; padding: 0;">
+                <li style="margin-bottom: 10px; color: #065f46;">Device is fingerprinted and recognized correctly.</li>
+                <li style="margin-bottom: 10px; color: #065f46;">Auto-approved rule is triggered and device is placed in the updated segment.</li>
+                <li style="margin-bottom: 10px; color: #065f46;">Device appears in <strong style="color: #065f46;">Access Management → Devices</strong> with its type (Windows/macOS) and correct segment.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 
+    ============================================
+    JAVASCRIPT - DO NOT MODIFY
+    This handles the checkbox state and step highlighting
+    ============================================
+    -->
+    <script>
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            checkboxes.forEach(function(checkbox) {
+                const step = checkbox.closest('.step');
+                if (checkbox.checked) {
+                    step.style.background = '#f0f9ff';
+                    step.style.borderColor = '#10b981';
+                } else {
+                    step.style.background = 'white';
+                    step.style.borderColor = '#e9ecef';
+                }
+            });
+            
+            const progress = {};
+            checkboxes.forEach(function(checkbox) {
+                progress[checkbox.id] = checkbox.checked;
+            });
+            localStorage.setItem('lab-progress-' + document.title, JSON.stringify(progress));
+        }
+
+        window.addEventListener('load', function () {
+            const saved = localStorage.getItem('lab-progress-' + document.title);
+            if (saved) {
+                const progress = JSON.parse(saved);
+                Object.keys(progress).forEach(function (id) {
+                    const checkbox = document.getElementById(id);
+                    if (checkbox) {
+                        checkbox.checked = progress[id];
+                    }
+                });
+                updateProgress();
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+

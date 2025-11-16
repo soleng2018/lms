@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Nile Guest Service SSID with Passcode & URL Filtering</title>
+</head>
+
+<body
+    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px; margin: 0;">
+
+    <div
+        style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        
+        <!-- 
+        ============================================
+        HEADER - Edit the emoji and title
+        ============================================
+        -->
+        <div
+            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center;">
+            <div style="font-size: 3em; margin-bottom: 10px;">🧪</div>
+            <h1 style="font-size: 2em; margin: 0;">Lab Assignment: Setup Nile Guest Service SSID with Passcode & URL Filtering</h1>
+        </div>
+
+        <!-- 
+        ============================================
+        OBJECTIVE - Edit the objective text
+        ============================================
+        -->
+        <div
+            style="background: #f8f9fa; border-left: 5px solid #667eea; padding: 20px; margin: 30px; border-radius: 8px;">
+            <h2 style="color: #667eea; margin: 0 0 10px 0; font-size: 1.5em;">📌 Objective</h2>
+            <p style="margin: 0 0 20px 0;">Enable and test a Nile Guest Service SSID secured with a passcode, configure URL filtering, and validate access restrictions for guest users.</p>
+        </div>
+
+        <!-- 
+        ============================================
+        BACKGROUND INFORMATION
+        ============================================
+        -->
+        <div
+            style="background: #e7f3ff; border-left: 5px solid #0d6efd; padding: 20px; margin: 30px; border-radius: 8px;">
+            <h2 style="color: #0d6efd; margin: 0 0 15px 0; font-size: 1.3em;">📖 About Nile Guest Service</h2>
+            <p style="margin: 0 0 15px 0; color: #1e293b;">Nile Guest Service is a modern, secure solution designed to provide guest internet access while isolating guest devices from an organization's internal network. It is part of the Nile Access Service (Network as a Service, NaaS) and addresses the security and management challenges associated with traditional guest network setups.</p>
+            <p style="margin: 0 0 15px 0; color: #1e293b;">All guest traffic is securely tunneled to a cloud-based Point of Presence (PoP) closest to the location, ensuring low latency and optimal performance. By utilizing Nile Guest Service, organizations can provide secure and reliable internet access to guests without compromising their internal network's security.</p>
+            <p style="margin: 0 0 10px 0; color: #1e293b;"><strong>Key Features:</strong></p>
+            <ul style="margin: 0 0 0 20px; padding: 0; color: #1e293b;">
+                <li style="margin-bottom: 8px;"><strong>Zero Trust Security:</strong> Guest traffic is completely isolated from corporate resources, preventing unauthorized access and lateral movement within the network.</li>
+                <li style="margin-bottom: 8px;"><strong>User-Friendly Experience:</strong> The service offers a smooth experience for guests, reducing the need for help desk support.</li>
+                <li style="margin-bottom: 8px;"><strong>Operational Efficiency:</strong> It simplifies guest network management by eliminating the need for complex configurations like VLANs and DHCP.</li>
+                <li style="margin-bottom: 8px;"><strong>Scalable Solution:</strong> Easily adapts to multi-site deployments without added complexity.</li>
+                <li style="margin-bottom: 8px;"><strong>Compliance Management:</strong> Helps organizations manage compliance issues related to guest access.</li>
+            </ul>
+        </div>
+
+        <!-- 
+        ============================================
+        CONTENT - Task Instructions
+        ============================================
+        -->
+        <div style="padding: 30px;">
+            <h2 style="color: #667eea; margin-bottom: 20px; font-size: 1.5em;">🔧 Task Instructions</h2>
+
+            <!-- 
+            ============================================
+            STEP 1 - Navigate to Wireless and Edit SSID
+            ============================================
+            -->
+            <div class="step" data-step="1" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step1" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 1:</span> Navigate to Wireless and Edit SSID</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">Navigate to <strong
+                                style="color: #1e293b;">Network Setup → Wireless</strong>.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Edit the <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">"Nile"</span> SSID.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 
+            ============================================
+            STEP 2 - Set Authentication Type
+            ============================================
+            -->
+            <div class="step" data-step="2" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step2" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 2:</span> Set Authentication Type</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">Set the <strong style="color: #1e293b;">Authentication Type</strong> to <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Click through</span>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 
+            ============================================
+            STEP 3 - Configure URL Filtering
+            ============================================
+            -->
+            <div class="step" data-step="3" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step3" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 3:</span> Configure URL Filtering</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">Click on the <strong style="color: #1e293b;">URL Filtering</strong> tab.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Select a filtering level: <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Low</span>, <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Moderate</span>, or <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Strict</span>.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Refer to this guide: <strong style="color: #1e293b;">Nile URL Filtering Documentation</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 
+            ============================================
+            STEP 4 - Advanced URL Filtering (Optional)
+            ============================================
+            -->
+            <div class="step" data-step="4" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step4" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 4:</span> Advanced URL Filtering (Optional)</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">Click on the <strong style="color: #1e293b;">Advanced</strong> tab.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Add a blocked URL such as <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">youtube.com</span>.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">You may also add allowed URLs as needed.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 
+            ============================================
+            STEP 5 - Connect and Test
+            ============================================
+            -->
+            <div class="step" data-step="5" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step5" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 5:</span> Connect and Test</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">Connect a device to the SSID using the configured passcode.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Attempt to browse restricted content to verify that filtering is applied.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 
+        ============================================
+        VERIFICATION CRITERIA - Edit the criteria
+        ============================================
+        -->
+        <div
+            style="background: #d1fae5; border-left: 5px solid #10b981; padding: 20px; margin: 30px; border-radius: 8px;">
+            <h2 style="color: #10b981; margin: 0 0 15px 0; font-size: 1.5em;">✅ Verification Criteria</h2>
+            <p style="margin-bottom: 15px; color: #065f46;">Ensure the following conditions are met before considering
+                the lab complete:</p>
+            <ul style="margin: 0 0 0 20px; padding: 0;">
+                <li style="margin-bottom: 10px; color: #065f46;">Guest device successfully connects to the SSID with the passcode.</li>
+                <li style="margin-bottom: 10px; color: #065f46;">URL filtering blocks access to restricted categories or domains.</li>
+                <li style="margin-bottom: 10px; color: #065f46;">Advanced rules take effect (e.g., youtube.com is blocked).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 
+    ============================================
+    JAVASCRIPT - DO NOT MODIFY
+    This handles the checkbox state and step highlighting
+    ============================================
+    -->
+    <script>
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            checkboxes.forEach(function(checkbox) {
+                const step = checkbox.closest('.step');
+                if (checkbox.checked) {
+                    step.style.background = '#f0f9ff';
+                    step.style.borderColor = '#10b981';
+                } else {
+                    step.style.background = 'white';
+                    step.style.borderColor = '#e9ecef';
+                }
+            });
+            
+            const progress = {};
+            checkboxes.forEach(function(checkbox) {
+                progress[checkbox.id] = checkbox.checked;
+            });
+            localStorage.setItem('lab-progress-' + document.title, JSON.stringify(progress));
+        }
+
+        window.addEventListener('load', function () {
+            const saved = localStorage.getItem('lab-progress-' + document.title);
+            if (saved) {
+                const progress = JSON.parse(saved);
+                Object.keys(progress).forEach(function (id) {
+                    const checkbox = document.getElementById(id);
+                    if (checkbox) {
+                        checkbox.checked = progress[id];
+                    }
+                });
+                updateProgress();
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
