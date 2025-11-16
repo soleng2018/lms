@@ -1,0 +1,24 @@
+1. Objective
+Ability to create a Nile RADIUS lab with EAP-TLS using multiple SSIDS
+
+2.Step 1 - Enable RADIUS
+Navigate to Network Setup --> Authentication --> Nile RADIUS
+Click on Use Demo Certs
+Click Save
+
+3. Step 2 - Create a Segment
+Navigate to Network Setup --> Segments
+Create a New Segment with Name = Marketing
+Select Service Areas and Choose HoL
+Choose Authentication as Nile RADIUS
+Choose DHCP as Nile DHCP
+Choose Subnet as 192.168.14.0/24
+Click Save
+
+4. Step 3 - Create a SSID
+Navigate to Network Setup --> Wireless
+Add a New SSID called Alonso-RADIUS - Note- you can choose any name that you please. Ensure it is unique
+Selct Type as Enterprise
+Select Encryption as WPA3
+Select Segment as Marketing
+Click Save
