@@ -77,7 +77,7 @@
                             <div style="margin-left: 20px; margin-top: 10px;">
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Pool Name</strong> -
                                     <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">PSK-Scope</span>
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Corporate-Scope</span>
                                 </div>
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Network</strong> - <span
                                         style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">192.168.10.0/24</span>
@@ -115,7 +115,7 @@
                         <li style="margin-bottom: 12px; color: #475569;">Go to <strong style="color: #1e293b;">Network
                                 Setup → Segments</strong>.</li>
                         <li style="margin-bottom: 12px; color: #475569;">Create a new segment named <span
-                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">PSK-Seg</span>:
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Corporate-Seg</span>:
                             <div style="margin-left: 20px; margin-top: 10px;">
                                 <div style="padding: 8px 0;">• Select the <strong style="color: #1e293b;">Service
                                         Area</strong>.</div>
@@ -125,7 +125,7 @@
                                 <div style="padding: 8px 0;">• Select the <strong style="color: #1e293b;">DHCP scope
                                         (Nile DHCP)</strong> for the clients.</div>
                                 <div style="padding: 8px 0;">• Select the <strong style="color: #1e293b;">Subnet
-                                        PSK-Scope</strong> that was created in the previous Step</div>
+                                        Corporate-Scope</strong> that was created in the previous Step</div>
                                 <div style="padding: 8px 0;">• Click <strong style="color: #1e293b;">Save</strong></div>
                             </div>
                         </li>
@@ -160,8 +160,8 @@
                             <div style="margin-left: 20px; margin-top: 10px;">
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">SSID Name:</strong>
                                     Define anything you like, ensure it is unique to you. e.g, <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Alonso-PSK</span>
-                                    (Alonso is my tenant name)</div>
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">ACME Corp</span>
+                                    (use your own company/tenant name)</div>
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Type:</strong> <span
                                         style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Personal</span>
                                 </div>
@@ -173,22 +173,15 @@
                                         style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">12345678</span>
                                 </div>
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Segment:</strong> <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">PSK-Seg</span>
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Corporate-Seg</span>
                                     (or any other name you may have used)</div>
                             </div>
                         </li>
                     </ul>
-
-                    <div
-                        style="background: #e7f3ff; border-left: 5px solid #0d6efd; padding: 15px; margin: 15px 0; border-radius: 5px;">
-                        <strong style="color: #0d6efd;">💡 Example:</strong> SSID Name: <span
-                            style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Alonso-PSK</span>
-                        (where Alonso is the tenant name - use your own unique name).
-                    </div>
                 </div>
             </div>
 
-            <!-- 
+            <!--
             ============================================
             STEP 4 - Connectivity Testing
             ============================================
@@ -254,9 +247,50 @@
                 </div>
             </div>
 
+            <!--
+            ============================================
+            STEP 6 - Testing Incorrect PSK Behavior
+            ============================================
+            -->
+            <div class="step" data-step="6"
+                style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step6" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 6:</span> Testing Incorrect PSK Behavior
+                        </h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">Go back to your wireless client. On
+                            Windows, click the Wi-Fi icon in the taskbar, right-click on the SSID you connected to
+                            earlier, and select <strong style="color: #1e293b;">Forget</strong>.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Reconnect to the same SSID, but this time
+                            deliberately enter an <strong style="color: #1e293b;">incorrect Pre-Shared Key</strong>.
+                        </li>
+                        <li style="margin-bottom: 12px; color: #475569;">Navigate to <strong
+                                style="color: #1e293b;">Devices</strong> in the Nile Control Center, then click on
+                            your device's <strong style="color: #1e293b;">MAC address</strong> to land on its device
+                            details page.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">In the <strong
+                                style="color: #1e293b;">Events</strong> table on that page, take note of the error
+                            shown, e.g. a <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">PSK
+                                Mismatch</span> entry.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Be patient — it can take a minute or two
+                            for the dashboard to reflect the issue.</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
-        <!-- 
+        <!--
         ============================================
         VERIFICATION CRITERIA - Edit the criteria
         ============================================
