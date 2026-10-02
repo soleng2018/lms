@@ -8,10 +8,10 @@
 </head>
 
 <body
-    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px; margin: 0;">
+    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px 20px 60px 20px; margin: 0;">
 
     <div
-        style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding-bottom: 1px;">
         
         <!-- 
         ============================================
@@ -85,6 +85,8 @@
                                 style="color: #1e293b;">Network Setup → Wireless</strong>.</li>
                         <li style="margin-bottom: 12px; color: #475569;">Edit the <span
                                 style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">"Nile"</span> SSID.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Replace the SSID name with <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">ACME Secure Guest</span>.</li>
                     </ul>
                 </div>
             </div>
@@ -136,7 +138,7 @@
                                 style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Low</span>, <span
                                 style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Moderate</span>, or <span
                                 style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Strict</span>.</li>
-                        <li style="margin-bottom: 12px; color: #475569;">Refer to this guide: <strong style="color: #1e293b;">Nile URL Filtering Documentation</strong></li>
+                        <li style="margin-bottom: 12px; color: #475569;">Refer to this guide: <a href="https://docs.nilesecure.com/url-filtering" target="_blank" style="color: #1e293b; font-weight: bold;">Nile URL Filtering Documentation</a></li>
                     </ul>
                 </div>
             </div>
@@ -161,7 +163,7 @@
                     <ul style="margin: 15px 0 15px 20px; padding: 0;">
                         <li style="margin-bottom: 12px; color: #475569;">Click on the <strong style="color: #1e293b;">Advanced</strong> tab.</li>
                         <li style="margin-bottom: 12px; color: #475569;">Add a blocked URL such as <span
-                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">youtube.com</span>.</li>
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">https://www.youtube.com</span>.</li>
                         <li style="margin-bottom: 12px; color: #475569;">You may also add allowed URLs as needed.</li>
                     </ul>
                 </div>
@@ -186,6 +188,8 @@
                 <div style="margin-left: 40px;">
                     <ul style="margin: 15px 0 15px 20px; padding: 0;">
                         <li style="margin-bottom: 12px; color: #475569;">Connect a device to the SSID using the configured passcode.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Take note of the IP address assigned to the device using <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">ipconfig</span> via Command Prompt.</li>
                         <li style="margin-bottom: 12px; color: #475569;">Attempt to browse restricted content to verify that filtering is applied.</li>
                     </ul>
                 </div>
@@ -206,7 +210,7 @@
             <ul style="margin: 0 0 0 20px; padding: 0;">
                 <li style="margin-bottom: 10px; color: #065f46;">Guest device successfully connects to the SSID with the passcode.</li>
                 <li style="margin-bottom: 10px; color: #065f46;">URL filtering blocks access to restricted categories or domains.</li>
-                <li style="margin-bottom: 10px; color: #065f46;">Advanced rules take effect (e.g., youtube.com is blocked).</li>
+                <li style="margin-bottom: 10px; color: #065f46;">Advanced rules take effect (e.g., https://www.youtube.com is blocked).</li>
             </ul>
         </div>
     </div>

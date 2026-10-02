@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webhook Integration with ServiceNow</title>
+    <title>Creating Support Tickets from myNile via Webhooks to an ITSM like ServiceNow</title>
 </head>
 
 <body
-    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px; margin: 0;">
+    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px 20px 60px 20px; margin: 0;">
 
     <div
-        style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding-bottom: 1px;">
         
         <!-- 
         ============================================
@@ -21,7 +21,7 @@
         <div
             style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center;">
             <div style="font-size: 3em; margin-bottom: 10px;">🧪</div>
-            <h1 style="font-size: 2em; margin: 0;">Lab Assignment: Webhook Integration with ServiceNow</h1>
+            <h1 style="font-size: 2em; margin: 0;">Lab Assignment: Creating Support Tickets from myNile via Webhooks to an ITSM like ServiceNow</h1>
         </div>
 
         <!-- 
@@ -32,7 +32,7 @@
         <div
             style="background: #f8f9fa; border-left: 5px solid #667eea; padding: 20px; margin: 30px; border-radius: 8px;">
             <h2 style="color: #667eea; margin: 0 0 10px 0; font-size: 1.5em;">📌 Objective</h2>
-            <p style="margin: 0 0 20px 0;">Integrate Nile with ServiceNow using webhooks, then test ticket creation directly from the my.nilesecure.com portal.</p>
+            <p style="margin: 0 0 20px 0;">Enable end users to create support tickets directly from the my.nilesecure.com (myNile) portal by integrating Nile with an ITSM platform like ServiceNow using webhooks.</p>
         </div>
 
         <!-- 
@@ -97,7 +97,7 @@
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">URL</strong> - <span
                                         style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">https://automation.nilenetworks.com/webhook/mynile</span></div>
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Token</strong> - <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">e5362baf-c777-4d57-a609-6eaf1f9e87f6</span></div>
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">5110d57f-af94-47fb-9914-a2526af116ef</span></div>
                             </div>
                         </li>
                     </ul>
@@ -122,10 +122,35 @@
                 </div>
                 <div style="margin-left: 40px;">
                     <ul style="margin: 15px 0 15px 20px; padding: 0;">
-                        <li style="margin-bottom: 12px; color: #475569;">Connect a wireless client to any SSID that has been configured previously.</li>
-                        <li style="margin-bottom: 12px; color: #475569;">Go to <span
+                        <li style="margin-bottom: 12px; color: #475569;">Navigate to the PC and connect to the <strong style="color: #1e293b;">ACME SSO</strong> SSID.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Open a browser and navigate to <span
                                 style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">my.nilesecure.com</span> and click on <strong style="color: #1e293b;">"Need more help"</strong> in the top-right corner to create a service ticket.</li>
                         <li style="margin-bottom: 12px; color: #475569;">Provide the necessary information, such as email, title, issue description, and submit the ticket.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Click the camera icon (<span style="font-size: 1.1em;">📷</span>) in the "Report incident" form to take a screenshot of the page and attach it to the ticket.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--
+            ============================================
+            STEP 4 - View the Ticket
+            ============================================
+            -->
+            <div class="step" data-step="4" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step4" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 4:</span> View the Ticket</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 0; color: #475569;">Go to <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">https://automation.nilenetworks.com/webhook/mynile-tickets</span> to view the ticket that was created via the webhook.</li>
                     </ul>
                 </div>
             </div>
@@ -143,9 +168,10 @@
             <p style="margin-bottom: 15px; color: #065f46;">Ensure the following conditions are met before considering
                 the lab complete:</p>
             <ul style="margin: 0 0 0 20px; padding: 0;">
-                <li style="margin-bottom: 10px; color: #065f46;">Connect a wireless client to any SSID that has been configured previously.</li>
-                <li style="margin-bottom: 10px; color: #065f46;">Go to <strong style="color: #065f46;">my.nilesecure.com</strong> and click on <strong style="color: #065f46;">"Need more help"</strong> in the top-right corner to create a service ticket.</li>
+                <li style="margin-bottom: 10px; color: #065f46;">Navigate to the PC and connect to the <strong style="color: #065f46;">ACME SSO</strong> SSID.</li>
+                <li style="margin-bottom: 10px; color: #065f46;">Open a browser and navigate to <strong style="color: #065f46;">my.nilesecure.com</strong> and click on <strong style="color: #065f46;">"Need more help"</strong> in the top-right corner to create a service ticket.</li>
                 <li style="margin-bottom: 10px; color: #065f46;">Provide the necessary information, such as email, title, issue description, and submit the ticket.</li>
+                <li style="margin-bottom: 10px; color: #065f46;">Click the camera icon (📷) in the "Report incident" form to take a screenshot of the page and attach it to the ticket.</li>
             </ul>
         </div>
     </div>

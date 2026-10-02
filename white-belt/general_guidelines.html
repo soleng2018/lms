@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Guidelines</title>
+</head>
+
+<body
+    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px 20px 60px 20px; margin: 0;">
+
+    <div
+        style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding-bottom: 1px;">
+
+        <!--
+        ============================================
+        HEADER
+        ============================================
+        -->
+        <div
+            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center;">
+            <div style="font-size: 3em; margin-bottom: 10px;">📋</div>
+            <h1 style="font-size: 2em; margin: 0;">Before You Start: General Guidelines</h1>
+        </div>
+
+        <!--
+        ============================================
+        OBJECTIVE
+        ============================================
+        -->
+        <div
+            style="background: #f8f9fa; border-left: 5px solid #667eea; padding: 20px; margin: 30px; border-radius: 8px;">
+            <h2 style="color: #667eea; margin: 0 0 10px 0; font-size: 1.5em;">📌 Objective</h2>
+            <p style="margin: 0;">Understand the remote lab environment and the ground rules you'll follow across every
+                lab in this course before you begin your first configuration task.</p>
+        </div>
+
+        <!--
+        ============================================
+        CONTENT
+        ============================================
+        -->
+        <div style="padding: 30px;">
+            <h2 style="color: #667eea; margin-bottom: 20px; font-size: 1.5em;">🌐 Lab Topology</h2>
+
+            <div style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px;">
+
+                    <!-- Router -->
+                    <div style="background: #eef2ff; border: 2px solid #667eea; border-radius: 8px; padding: 12px 16px; text-align: center; min-width: 120px;">
+                        <div style="font-weight: bold; color: #1e293b; font-size: 0.95em;">Router</div>
+                        <div style="color: #475569; font-size: 0.8em;">RADIUS + DHCP</div>
+                    </div>
+
+                    <div style="color: #94a3b8; font-size: 1.3em; padding: 0 2px;">→</div>
+
+                    <!-- Zero Trust Fabric -->
+                    <div style="border: 2px dashed #764ba2; border-radius: 10px; padding: 14px; text-align: center;">
+                        <div style="color: #764ba2; font-weight: bold; font-size: 0.85em; margin-bottom: 8px;">Zero Trust Fabric</div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <div style="background: #eef2ff; border: 2px solid #667eea; border-radius: 8px; padding: 12px 16px; text-align: center; min-width: 90px;">
+                                <div style="font-weight: bold; color: #1e293b; font-size: 0.95em;">Switch</div>
+                            </div>
+                            <div style="color: #94a3b8; font-size: 1.1em;">—</div>
+                            <div style="background: #eef2ff; border: 2px solid #667eea; border-radius: 8px; padding: 12px 16px; text-align: center; min-width: 70px;">
+                                <div style="font-weight: bold; color: #1e293b; font-size: 0.95em;">AP</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 10px; margin-left: 4px;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="color: #10b981; font-size: 1.1em;">┄┄▶</span>
+                            <div style="background: #e7f3ff; border: 2px solid #0d6efd; border-radius: 8px; padding: 10px 14px; text-align: center; min-width: 110px;">
+                                <div style="font-weight: bold; color: #1e293b; font-size: 0.9em;">Windows PC 1</div>
+                                <div style="color: #475569; font-size: 0.75em;">RDP · wireless</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="color: #10b981; font-size: 1.1em;">┄┄▶</span>
+                            <div style="background: #e7f3ff; border: 2px solid #0d6efd; border-radius: 8px; padding: 10px 14px; text-align: center; min-width: 110px;">
+                                <div style="font-weight: bold; color: #1e293b; font-size: 0.9em;">Windows PC 2</div>
+                                <div style="color: #475569; font-size: 0.75em;">RDP · wireless</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="color: #94a3b8; font-size: 1.1em;">──▶</span>
+                            <div style="background: #fff3cd; border: 2px solid #ffc107; border-radius: 8px; padding: 10px 14px; text-align: center; min-width: 110px;">
+                                <div style="font-weight: bold; color: #1e293b; font-size: 0.9em;">Mac OSX PC</div>
+                                <div style="color: #475569; font-size: 0.75em;">VNC · wired</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legend -->
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; font-size: 0.85em; color: #475569;">
+                    <div><span style="color: #94a3b8;">──▶</span> Wired</div>
+                    <div><span style="color: #10b981;">┄┄▶</span> Wireless</div>
+                </div>
+            </div>
+
+            <div
+                style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; margin: 0 0 25px 0; border-radius: 5px; display: flex; gap: 10px;">
+                <div style="font-size: 1.5em; flex-shrink: 0;">📝</div>
+                <div>
+                    <strong>Note:</strong> You are given three client devices — two Windows PCs (wireless only) and one
+                    Mac OSX PC (wired only). Most labs in this course use only two of the three; some advanced labs
+                    later on will use all three at once.
+                </div>
+            </div>
+
+            <h2 style="color: #667eea; margin-bottom: 20px; font-size: 1.5em;">🔧 Guidelines</h2>
+
+            <div class="step" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <h3 style="color: #1e293b; font-size: 1.3em; margin: 0 0 15px 0;">💻 Remote Lab Access</h3>
+                <ul style="margin: 0 0 0 20px; padding: 0;">
+                    <li style="margin-bottom: 12px; color: #475569;">You'll be given access to two remote PCs, both
+                        delivered straight to your browser — no apps to install:
+                        <div style="margin-left: 20px; margin-top: 10px;">
+                            <div style="padding: 8px 0;">• A <strong style="color: #1e293b;">Windows PC</strong>, accessed via
+                                <strong style="color: #1e293b;">RDP</strong>, used for wireless labs.</div>
+                            <div style="padding: 8px 0;">• A <strong style="color: #1e293b;">Mac OSX PC</strong>, accessed via
+                                <strong style="color: #1e293b;">VNC</strong>, used for wired labs.</div>
+                        </div>
+                    </li>
+                    <li style="margin-bottom: 0; color: #475569;">You'll receive two separate passwords: one to access the
+                        lab URLs, and a separate operating system login password — the OS password is also used to log in
+                        via RDP, and is otherwise only needed in one specific lab.</li>
+                </ul>
+            </div>
+
+            <div class="step" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <h3 style="color: #1e293b; font-size: 1.3em; margin: 0 0 15px 0;">🔗 One Portal to Use</h3>
+                <ul style="margin: 0 0 0 20px; padding: 0;">
+                    <li style="margin-bottom: 0; color: #475569;">All configuration for every lab happens in the
+                        <strong style="color: #1e293b;">Nile Portal</strong>. You won't need to log into any other admin
+                        system.</li>
+                </ul>
+            </div>
+
+            <div class="step" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <h3 style="color: #1e293b; font-size: 1.3em; margin: 0 0 15px 0;">🏷️ Use the Exact Names Given</h3>
+                <ul style="margin: 0 0 0 20px; padding: 0;">
+                    <li style="margin-bottom: 0; color: #475569;">Each lab runs in its own isolated RF environment, so
+                        use the names already shown in the instructions (e.g. <span
+                            style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">ACME SSO</span>,
+                        <span
+                            style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">ACME Guest</span>)
+                        rather than inventing your own. In some labs, a segment name must match exactly what's configured
+                        on the RADIUS server, so precision matters.</li>
+                </ul>
+            </div>
+
+            <div class="step" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <h3 style="color: #1e293b; font-size: 1.3em; margin: 0 0 15px 0;">✅ Follow Steps in Order</h3>
+                <ul style="margin: 0 0 0 20px; padding: 0;">
+                    <li style="margin-bottom: 0; color: #475569;">Carefully perform each step as described — don't skip
+                        ahead. Steps build on each other within a lab, and some labs build on earlier labs (for example,
+                        the webhook/ITSM lab assumes the PSK SSO lab has already been completed).</li>
+                </ul>
+            </div>
+
+            <div class="step" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <h3 style="color: #1e293b; font-size: 1.3em; margin: 0 0 15px 0;">💾 Progress Is Saved Locally</h3>
+                <ul style="margin: 0 0 0 20px; padding: 0;">
+                    <li style="margin-bottom: 0; color: #475569;">Step checkboxes are saved to your browser's local
+                        storage, not to a server. Avoid switching browsers or clearing site data partway through the
+                        course, or you'll lose your checked-off progress.</li>
+                </ul>
+            </div>
+
+            <div class="step" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <h3 style="color: #1e293b; font-size: 1.3em; margin: 0 0 15px 0;">🔍 Verify Before Moving On</h3>
+                <ul style="margin: 0 0 0 20px; padding: 0;">
+                    <li style="margin-bottom: 0; color: #475569;">Every lab ends with a Verification Criteria section —
+                        confirm each condition there before checking the lab off as complete.</li>
+                </ul>
+            </div>
+
+            <div class="step" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <h3 style="color: #1e293b; font-size: 1.3em; margin: 0 0 15px 0;">🛠️ Use the Built-in Troubleshooting Tool</h3>
+                <ul style="margin: 0 0 0 20px; padding: 0;">
+                    <li style="margin-bottom: 0; color: #475569;">Under <strong style="color: #1e293b;">Devices</strong>
+                        in the Nile Portal, the <span
+                            style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">RUN TEST</span>
+                        button shows ping/ARP results and authentication events — use it whenever a step doesn't behave
+                        the way you expect.</li>
+                </ul>
+            </div>
+
+            <div class="step" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 0;">
+                <h3 style="color: #1e293b; font-size: 1.3em; margin: 0 0 15px 0;">📓 Take Notes and Complete the Quiz</h3>
+                <ul style="margin: 0 0 0 20px; padding: 0;">
+                    <li style="margin-bottom: 12px; color: #475569;">Jot down any issues, questions, or steps you find
+                        important for future reference or troubleshooting.</li>
+                    <li style="margin-bottom: 0; color: #475569;">Take the end-of-course quiz seriously — it helps
+                        reinforce what you've learned and highlights areas for review.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

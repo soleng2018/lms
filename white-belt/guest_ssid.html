@@ -8,10 +8,10 @@
 </head>
 
 <body
-    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px; margin: 0;">
+    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px 20px 60px 20px; margin: 0;">
 
     <div
-        style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding-bottom: 1px;">
         
         <!-- 
         ============================================
@@ -34,7 +34,7 @@
             <h2 style="color: #667eea; margin: 0 0 10px 0; font-size: 1.5em;">📌 Objective</h2>
             <p style="margin: 0 0 20px 0;">Create a Guest Wi-Fi SSID with a custom captive portal, configure it with an external DHCP server, and customize branding (logo, colors, background).</p>
             <div style="text-align: center;">
-                <a href="#"
+                <a href="https://u1.nile-global.cloud"
                     style="display: inline-block; background: #667eea; color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">🔗
                     Go to Nile Portal</a>
             </div>
@@ -80,7 +80,9 @@
                         <li style="margin-bottom: 12px; color: #475569;">Click on ➕ icon to Add a new external DHCP server:
                             <div style="margin-left: 20px; margin-top: 10px;">
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Name</strong> - <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Alonso External DHCP</span> (put a name of your choice)</div>
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">External DHCP</span> (put a name of your choice)</div>
+                                <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Geo scope</strong> - <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">HOL</span></div>
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Host</strong> - <span
                                         style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">172.16.253.2</span></div>
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Subnets</strong> - Click on ➕ icon to add a second new subnet</div>
@@ -120,17 +122,18 @@
                         <li style="margin-bottom: 12px; color: #475569;">Configure the following:
                             <div style="margin-left: 20px; margin-top: 10px;">
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Name</strong> - <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Alonso Guest Portal</span></div>
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">ACME Guest Portal</span></div>
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Geo scope</strong> - <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">HoL</span></div>
-                                <div style="padding: 8px 0;">• Click the drop-down at <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">"Click through"</span> → Choose <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">HOL</span></div>
+                                <div style="padding: 8px 0;">• Click the drop-down → Choose <span
                                         style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">"Access code"</span></div>
+                                <div style="padding: 8px 0;">• Toggle <strong style="color: #1e293b;">"Use generic access code"</strong></div>
                                 <div style="padding: 8px 0;">• Click <strong style="color: #1e293b;">Save</strong></div>
+                                <div style="padding: 8px 0;">• Edit the Guest Portal by clicking it</div>
+                                <div style="padding: 8px 0; color: #b45309; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; margin: 8px 0;">⚠️ <strong>Important:</strong> Access codes cannot be created until the portal is <strong style="color: #1e293b;">Saved</strong> first. You must then click the portal again to <strong style="color: #1e293b;">Edit</strong> it before the access code options become available.</div>
                             </div>
                         </li>
-                        <li style="margin-bottom: 12px; color: #475569;">Edit the Guest Portal by clicking it</li>
-                        <li style="margin-bottom: 12px; color: #475569;">Click on <strong style="color: #1e293b;">Access Codes</strong></li>
+                        <li style="margin-bottom: 12px; color: #475569;">On the table, click the ➕ icon to add an entry</li>
                         <li style="margin-bottom: 12px; color: #475569;">Enter <span
                                 style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">12345678</span> and Click the ➕ icon</li>
                         <li style="margin-bottom: 12px; color: #475569;">Click <strong style="color: #1e293b;">Save</strong></li>
@@ -164,10 +167,11 @@
                                 <div style="padding: 8px 0;">• Select the <strong style="color: #1e293b;">Service Area</strong>.</div>
                                 <div style="padding: 8px 0;">• Choose <strong style="color: #1e293b;">HoL</strong> and Click <strong style="color: #1e293b;">OK</strong></div>
                                 <div style="padding: 8px 0;">• Set Authentication source to <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Alonso Guest Portal</span> (the name of your guest portal created in the previous step)</div>
-                                <div style="padding: 8px 0;">• Select the <strong style="color: #1e293b;">DHCP scope (Alonso External DHCP or your DHCP server name)</strong> for the clients.</div>
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Guest Portal</span> (the name of your guest portal created in the previous step)</div>
+                                <div style="padding: 8px 0;">• Select the <strong style="color: #1e293b;">DHCP scope (External DHCP or your DHCP server name)</strong> for the clients.</div>
                                 <div style="padding: 8px 0;">• Select the <strong style="color: #1e293b;">Subnet 192.168.19.0/24</strong> that was created in the previous Step</div>
                                 <div style="padding: 8px 0;">• Click <strong style="color: #1e293b;">Verify DHCP</strong></div>
+                                <div style="padding: 8px 0; color: #b45309; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; margin: 8px 0;">⚠️ <strong>Note:</strong> If the <strong style="color: #1e293b;">Verify DHCP</strong> button does not show up, click Save, then Edit the segment and come back to this page again.</div>
                                 <div style="padding: 8px 0;">• Click <strong style="color: #1e293b;">Save</strong></div>
                             </div>
                         </li>
@@ -201,7 +205,7 @@
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Type</strong> - <span
                                         style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Captive Portal</span></div>
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Name</strong> - <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Alonso Guest</span> (Choose any distinctive Name)</div>
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">ACME Guest</span> (Choose any distinctive Name)</div>
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Security</strong> - <span
                                         style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Open</span></div>
                                 <div style="padding: 8px 0;">• <strong style="color: #1e293b;">Segments</strong> - <span
@@ -209,12 +213,6 @@
                             </div>
                         </li>
                     </ul>
-                    
-                    <div
-                        style="background: #e7f3ff; border-left: 5px solid #0d6efd; padding: 15px; margin: 15px 0; border-radius: 5px;">
-                        <strong style="color: #0d6efd;">💡 Example:</strong> Name: <span
-                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Alonso Guest</span> (where Alonso is the tenant name - use your own unique name).
-                    </div>
                 </div>
             </div>
 
@@ -249,9 +247,40 @@
                 </div>
             </div>
 
+            <!--
+            ============================================
+            STEP 6 - Connectivity Testing
+            ============================================
+            -->
+            <div class="step" data-step="6" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step6" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 6:</span> Connectivity Testing</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">If you are conducting this lab remotely, you
+                            should have received a URL (and a username/password) to connect to a windows device</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Use a wireless device to connect to the new
+                            SSID.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">When the Captive Portal appears, enter the
+                            access code <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">12345678</span>
+                            to authenticate.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">Verify you can access the Internet</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
-        <!-- 
+        <!--
         ============================================
         VERIFICATION CRITERIA - Edit the criteria
         ============================================
@@ -265,6 +294,7 @@
                 <li style="margin-bottom: 10px; color: #065f46;">SSID is visible.</li>
                 <li style="margin-bottom: 10px; color: #065f46;">Captive Portal is displayed on connection.</li>
                 <li style="margin-bottom: 10px; color: #065f46;">Branding is visible and applied correctly on the portal page.</li>
+                <li style="margin-bottom: 10px; color: #065f46;">Client successfully authenticates with the access code and reaches the Internet.</li>
             </ul>
         </div>
     </div>

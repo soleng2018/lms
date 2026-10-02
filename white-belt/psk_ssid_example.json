@@ -1,7 +1,7 @@
 {
   "title": "Lab Assignment: Setting Up PSK Wireless SSID",
   "objective": {
-    "description": "Configure a secure PSK (Pre-Shared Key) SSID on the Nile Control Center, connect a test client to the SSID, and verify successful connection and network access.",
+    "description": "Configure a secure PSK (Pre-Shared Key) SSID on the Nile Portal, connect a test client to the SSID, and verify successful connection and network access.",
     "portal_url": "#"
   },
   "task_instructions": {

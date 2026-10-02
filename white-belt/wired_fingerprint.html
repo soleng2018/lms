@@ -8,10 +8,10 @@
 </head>
 
 <body
-    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px; margin: 0;">
+    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px 20px 60px 20px; margin: 0;">
 
     <div
-        style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding-bottom: 1px;">
         
         <!-- 
         ============================================
@@ -43,9 +43,9 @@
         <div style="padding: 30px;">
             <h2 style="color: #667eea; margin-bottom: 20px; font-size: 1.5em;">🔧 Task Instructions</h2>
 
-            <!-- 
+            <!--
             ============================================
-            STEP 1 - Segment Reuse & Update
+            STEP 1 - Pre-Lab Cleanup (Reset Previous Lab State)
             ============================================
             -->
             <div class="step" data-step="1" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
@@ -56,25 +56,33 @@
                     </div>
                     <div style="flex-grow: 1;">
                         <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
-                                style="color: #667eea; font-weight: bold;">Step 1:</span> Segment Reuse & Update</h3>
+                                style="color: #667eea; font-weight: bold;">Step 1:</span> Pre-Lab Cleanup (Reset Previous Lab State)</h3>
                     </div>
                 </div>
                 <div style="margin-left: 40px;">
+                    <p style="margin: 0 0 15px 0; color: #475569;">Before starting this lab, clear out the 802.1X credentials and device record left over from the previous wired lab so the device can be classified fresh by fingerprint.</p>
                     <ul style="margin: 15px 0 15px 20px; padding: 0;">
-                        <li style="margin-bottom: 12px; color: #475569;">Navigate to <strong
-                                style="color: #1e293b;">Network Setup → Segments</strong>.</li>
-                        <li style="margin-bottom: 12px; color: #475569;">Locate the previously created 802.1X segment.</li>
-                        <li style="margin-bottom: 12px; color: #475569;">Rename it to something more generic (e.g., <span
-                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Wired-Fingerprint-Segment</span>).</li>
-                        <li style="margin-bottom: 12px; color: #475569;">Remove the authentication method (set it to blank).</li>
-                        <li style="margin-bottom: 12px; color: #475569;">Confirm that it still has a <strong style="color: #1e293b;">Nile DHCP scope</strong> attached.</li>
+                        <li style="margin-bottom: 14px; color: #475569;">Open a Terminal window on the Mac and verify the stored 802.1X (PEAP) credentials exist:
+                            <div style="margin-top: 8px; background: #1e293b; color: #e2e8f0; padding: 10px 14px; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 0.9em; overflow-x: auto;">security find-generic-password -D "802.1X Password"</div>
+                        </li>
+                        <li style="margin-bottom: 14px; color: #475569;">Delete the credentials:
+                            <div style="margin-top: 8px; background: #1e293b; color: #e2e8f0; padding: 10px 14px; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 0.9em; overflow-x: auto;">sudo security delete-generic-password -D "802.1X Password"</div>
+                        </li>
+                        <li style="margin-bottom: 14px; color: #475569;">Run the same find command again to confirm the credentials are gone (it should return no match):
+                            <div style="margin-top: 8px; background: #1e293b; color: #e2e8f0; padding: 10px 14px; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 0.9em; overflow-x: auto;">security find-generic-password -D "802.1X Password"</div>
+                        </li>
+                        <li style="margin-bottom: 14px; padding: 12px 14px; background: #fff7ed; border: 2px solid #f59e0b; border-radius: 8px; color: #475569;">⚠️ <strong style="color: #b45309;">Critical step:</strong> In the Nile Portal, navigate to <strong style="color: #1e293b;">Devices</strong> → click your device → <strong style="color: #1e293b;">Action</strong> → <strong style="color: #1e293b;">Disconnect</strong>.</li>
+                        <li style="margin-bottom: 14px; color: #475569;">In the Nile Portal, remove the device record: navigate to <strong
+                                style="color: #1e293b;">Network Setup → Access Management</strong>, select the device's MAC address, and delete it.</li>
+                        <li style="margin-bottom: 14px; color: #475569;">On the Mac, go to <strong style="color: #1e293b;">Settings → Network</strong>, select the USB dongle, and click <strong style="color: #1e293b;">Make Active</strong>.</li>
+                        <li style="margin-bottom: 0; color: #475569;">Verify the device reappears in the Nile Portal under <strong style="color: #1e293b;">Network Setup → Access Management</strong> with a status of <strong style="color: #1e293b;">Waiting for approval</strong>.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 
+            <!--
             ============================================
-            STEP 2 - Fingerprint Rule Setup
+            STEP 2 - Segment Reuse & Update
             ============================================
             -->
             <div class="step" data-step="2" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
@@ -85,30 +93,22 @@
                     </div>
                     <div style="flex-grow: 1;">
                         <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
-                                style="color: #667eea; font-weight: bold;">Step 2:</span> Fingerprint Rule Setup</h3>
+                                style="color: #667eea; font-weight: bold;">Step 2:</span> Segment Reuse & Update</h3>
                     </div>
                 </div>
                 <div style="margin-left: 40px;">
                     <ul style="margin: 15px 0 15px 20px; padding: 0;">
-                        <li style="margin-bottom: 12px; color: #475569;">Go to <strong
-                                style="color: #1e293b;">Access Management → Add Device Rule</strong>.</li>
-                        <li style="margin-bottom: 12px; color: #475569;">Create a rule based on device fingerprint:
-                            <div style="margin-left: 20px; margin-top: 10px;">
-                                <div style="padding: 8px 0;">• For example, select <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Windows OS</span> or <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">macOS</span> as the match criteria.</div>
-                                <div style="padding: 8px 0;">• Assign the device to the updated wired segment.</div>
-                                <div style="padding: 8px 0;">• Set the rule to <span
-                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Auto-Approve</span>.</div>
-                            </div>
-                        </li>
+                        <li style="margin-bottom: 12px; color: #475569;">Navigate to <strong
+                                style="color: #1e293b;">Network Setup → Segments</strong>.</li>
+                        <li style="margin-bottom: 0; color: #475569;">Verify that the <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">IOT-Seg</span> segment exists, as it will be reused for this lab.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 
+            <!--
             ============================================
-            STEP 3 - Device Connection
+            STEP 3 - Fingerprint Rule Setup
             ============================================
             -->
             <div class="step" data-step="3" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
@@ -119,15 +119,98 @@
                     </div>
                     <div style="flex-grow: 1;">
                         <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
-                                style="color: #667eea; font-weight: bold;">Step 3:</span> Device Connection</h3>
+                                style="color: #667eea; font-weight: bold;">Step 3:</span> Fingerprint Rule Setup</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">Navigate to <strong
+                                style="color: #1e293b;">Network Setup → Access Management</strong> and click the <strong style="color: #1e293b;">+</strong> icon at the top right of the table to create a new rule.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">In the <strong style="color: #1e293b;">Add device</strong> dialog, fill in the rule:
+                            <div style="margin-left: 20px; margin-top: 10px;">
+                                <div style="padding: 8px 0;">• Under <strong style="color: #1e293b;">Select*</strong>, choose <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Fingerprint</span>.</div>
+                                <div style="padding: 8px 0;">• Under <strong style="color: #1e293b;">Select segment</strong>, choose <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">IOT-Seg</span>.</div>
+                                <div style="padding: 8px 0;">• Under <strong style="color: #1e293b;">Fingerprint*</strong>, select <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Mac OS X or macOS</span> (or <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Windows OS</span>, depending on your device).</div>
+                                <div style="padding: 8px 0;">• Set <strong style="color: #1e293b;">Status*</strong> to <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Approved</span>.</div>
+                                <div style="padding: 8px 0;">• Click <strong style="color: #1e293b;">SUBMIT</strong>.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--
+            ============================================
+            STEP 4 - Catch-All Rule Setup
+            ============================================
+            -->
+            <div class="step" data-step="4" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step4" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 4:</span> Catch-All Rule Setup</h3>
+                    </div>
+                </div>
+                <div style="margin-left: 40px;">
+                    <ul style="margin: 15px 0 15px 20px; padding: 0;">
+                        <li style="margin-bottom: 12px; color: #475569;">Navigate to <strong
+                                style="color: #1e293b;">Network Setup → Access Management</strong> and click the <strong style="color: #1e293b;">+</strong> icon at the top right of the table to create another rule.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">In the <strong style="color: #1e293b;">Add device</strong> dialog, fill in the rule:
+                            <div style="margin-left: 20px; margin-top: 10px;">
+                                <div style="padding: 8px 0;">• Under <strong style="color: #1e293b;">Select*</strong>, choose <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">ALL</span>.</div>
+                                <div style="padding: 8px 0;">• Under <strong style="color: #1e293b;">Select segment</strong>, choose <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Guest</span>.</div>
+                                <div style="padding: 8px 0;">• Set <strong style="color: #1e293b;">Status*</strong> to <span
+                                        style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">Approved</span>.</div>
+                                <div style="padding: 8px 0;">• Click <strong style="color: #1e293b;">SUBMIT</strong>.</div>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 0; color: #475569;">This catch-all rule ensures any device that doesn't match the fingerprint rule still gets placed into the <strong style="color: #1e293b;">Guest</strong> segment instead of being left unapproved.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--
+            ============================================
+            STEP 5 - Device Connection
+            ============================================
+            -->
+            <div class="step" data-step="5" style="background: white; border: 2px solid #e9ecef; border-radius: 10px; padding: 25px; margin-bottom: 25px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <div style="flex-shrink: 0; margin-top: 5px;">
+                        <input type="checkbox" id="step5" onchange="updateProgress()"
+                            style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="color: #1e293b; font-size: 1.4em; margin: 0 0 5px 0;"><span
+                                style="color: #667eea; font-weight: bold;">Step 5:</span> Device Connection</h3>
                     </div>
                 </div>
                 <div style="margin-left: 40px;">
                     <ul style="margin: 15px 0 15px 20px; padding: 0;">
                         <li style="margin-bottom: 12px; color: #475569;">Connect your wired laptop or desktop to the switch.</li>
-                        <li style="margin-bottom: 12px; color: #475569;">The system should detect and classify the device using fingerprinting.</li>
-                        <li style="margin-bottom: 12px; color: #475569;">The device should automatically appear in the correct segment without any user action.</li>
+                        <li style="margin-bottom: 12px; color: #475569;">The device will first match the <span
+                                style="background: #f8f9fa; padding: 3px 8px; border-radius: 4px; font-family: 'Courier New', monospace; color: #d63384; font-size: 0.95em;">ALL</span> rule and land in the <strong
+                                style="color: #1e293b;">Guest</strong> segment.</li>
+                        <li style="margin-bottom: 0; color: #475569;">Once the system fully fingerprints the device, it will automatically move it to the <strong
+                                style="color: #1e293b;">IOT-Seg</strong> segment, without any user action.</li>
                     </ul>
+                    <div
+                        style="margin-top: 15px; padding: 12px 14px; background: #fff7ed; border: 2px solid #f59e0b; border-radius: 8px; color: #475569;">⏳
+                        <strong style="color: #b45309;">Note:</strong> Fingerprinting can take some time to complete
+                        and move the device to the correct segment. Rather than waiting here, continue on with the
+                        other labs and come back to this lab at the end to verify the device has landed in the
+                        <strong style="color: #1e293b;">IOT-Seg</strong> segment.</div>
                 </div>
             </div>
 
